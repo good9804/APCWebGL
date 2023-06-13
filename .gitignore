@@ -69,7 +69,6 @@ pnpm-debug.log*
 # Recommended template: Node.gitignore
 
 node_modules/
-public/
 npm-debug.log
 yarn-error.log
 

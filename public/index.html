@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unity WebGL Player | GRID-sys</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width="1100" height="600"></canvas>
+    </div>
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/GRID_WEB.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/GRID_WEB.data",
+        frameworkUrl: buildUrl + "/GRID_WEB.framework.js",
+        codeUrl: buildUrl + "/GRID_WEB.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "GRID-sys",
+        productVersion: "1.0",
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, () => {})
+          .then((unityInstance) => {
+            window.unityInstance = unityInstance;
+          })
+          .catch((message) => {
+            alert(message);
+          });
+      };
+
+      document.body.appendChild(script);
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyALsiOZq2xgrAiiDgrqBk5S_3Yi6zZ-Lqc",
+        authDomain: "unity-apc.firebaseapp.com",
+        databaseURL: "https://unity-apc-default-rtdb.firebaseio.com",
+        projectId: "unity-apc",
+        storageBucket: "unity-apc.appspot.com",
+        messagingSenderId: "473072708063",
+        appId: "1:473072708063:web:3aa6c318b5dec91585bc6a",
+        measurementId: "G-PX7M8PBZFD",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>
