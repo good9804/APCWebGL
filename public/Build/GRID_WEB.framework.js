@@ -1975,13 +1975,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  2800388: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 2800443: function($0) {performance.now = function() { return $0; };},  
- 2800491: function($0) {performance.now = function() { return $0; };},  
- 2800539: function() {performance.now = Module['emscripten_get_now_backup'];},  
- 2800594: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 2800655: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 2800719: function() {return Module.webglContextAttributes.powerPreference;}
+  2800708: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 2800763: function($0) {performance.now = function() { return $0; };},  
+ 2800811: function($0) {performance.now = function() { return $0; };},  
+ 2800859: function() {performance.now = Module['emscripten_get_now_backup'];},  
+ 2800914: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 2800975: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 2801039: function() {return Module.webglContextAttributes.powerPreference;}
 };
 
 
@@ -15812,6 +15812,9 @@ var dynCall_jjjji = Module["dynCall_jjjji"] = createExportWrapper("dynCall_jjjji
 var dynCall_vjiiii = Module["dynCall_vjiiii"] = createExportWrapper("dynCall_vjiiii");
 
 /** @type {function(...*):?} */
+var dynCall_vfi = Module["dynCall_vfi"] = createExportWrapper("dynCall_vfi");
+
+/** @type {function(...*):?} */
 var dynCall_vijjii = Module["dynCall_vijjii"] = createExportWrapper("dynCall_vijjii");
 
 /** @type {function(...*):?} */
@@ -16224,9 +16227,6 @@ var dynCall_iiidi = Module["dynCall_iiidi"] = createExportWrapper("dynCall_iiidi
 
 /** @type {function(...*):?} */
 var dynCall_vdi = Module["dynCall_vdi"] = createExportWrapper("dynCall_vdi");
-
-/** @type {function(...*):?} */
-var dynCall_vfi = Module["dynCall_vfi"] = createExportWrapper("dynCall_vfi");
 
 /** @type {function(...*):?} */
 var dynCall_fff = Module["dynCall_fff"] = createExportWrapper("dynCall_fff");
