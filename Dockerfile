@@ -9,7 +9,7 @@
 #CMD ["node","index.js"]
 FROM nginx:latest
 
-COPY public/index.html /usr/share/nginx/html
+COPY public /usr/share/nginx/html
 
 EXPOSE 3005
 
