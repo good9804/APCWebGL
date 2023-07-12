@@ -8,20 +8,8 @@
 
 #CMD ["node","index.js"]
 # build stage
-FROM node:lts-alpine as build
+FROM nginx:latest
 
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-
-COPY public ./public
-RUN npm run build
-
-# production stage
-FROM nginx:stable-alpine
-
-COPY --from=build /app/public /usr/share/nginx/html
-
+COPY public /usr/share/nginx/html
 EXPOSE 3005
-
 CMD ["nginx", "-g", "daemon off;"]
