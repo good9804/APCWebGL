@@ -8,9 +8,9 @@ app.listen(3005, function () {
   console.log("App is running on port 3005");
 });
 
-/*app.get("/", function (req, res) {
-  res.sendfile("public/index.html"); //public 폴더 안의 index.html을 사용
-});*/
-app.get('/', (req, res) => {
-  res.sendFile('index.html', );
+app.get("/", function (req, res) {
+  res.sendfile("index.html"); //public 폴더 안의 index.html을 사용
 });
+/*app.get('/', (req, res) => {
+  res.sendFile('index.html',);
+});*/
